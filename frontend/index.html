@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Gestor de Tareas</title>
+    <script>
+       
+    </script>
+</head>
+<body>
+    <header>
+     
+        <h1 id="IdTitulo">Gestor de Tareas</h1>
+        <nav>
+            <a href="login.html">Iniciar Sesión</a>
+            <a href="register.html">Registro</a>
+            <button id="btnCerrarSesion" class="btn-buscar">
+               Cerrar Sesion
+            </button>
+        </nav>
+    </header>
+
+    <button id="open-modal" style="margin: 10px; background-color: #f39c12; border: none; padding: 10px; border-radius: 4px; cursor: pointer; font-weight: bold;">
+        Agregar Tarea
+    </button>
+
+
+
+    <button id="btnBuscarPorTitulo" class="btn-buscar">
+        Buscar Tarea Por Titulo
+    </button>
+    <input type="text" placeholder="Ingrese Titulo de Tarea" id="txtBuscarPorTitulo">
+
+    <button id="btnBuscarPorCategoria" class="btn-buscar">
+        Buscar Tarea Por Categoria
+    </button>
+    <select id="idTareaCategoriaBuscar" >
+        <option value="">Seleccione una categoría</option>
+        <option value="13">Sin Categoria</option>
+        <option value="1">Estudio</option>
+        <option value="2">Trabajo</option>
+        <option value="11">Personal</option>
+    </select>
+
+
+    <main>
+         
+        
+    
+        <div id="task-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h2 id="textoCambiar">Agregar  o Editar Tarea</h2>
+                    <label for="idTareaNombre">Nombre de la Tarea:</label>
+                    <input type="text" id="idTareaNombre" required>
+
+                    <label for="idtareaDescripcion">Descripcion Tarea</label>
+                    <input type="text" name="" id="idtareaDescripcion" >
+                 
+                    <label for="idFecha">Fecha de Vencimiento:</label>
+                    <input type="date" id="idFecha">
+                       
+                    <label for="idTareaCategoria">Categoría:</label>
+                    <select id="idTareaCategoria" >
+                        <option value="">Seleccione una categoría</option>
+                        <option value="13">Sin Categoria</option>
+                        <option value="1">Estudio</option>
+                        <option value="2">Trabajo</option>
+                        <option value="11">Personal</option>
+                    </select>
+                    <button  id="btnAgregarTarea">Guardar</button>
+           </div>
+        </div>
+
+        <section id="tareaCont">
+            <div class="accordion" id="cuerpo-tareas">
+                <div class="tarea">
+                    <h3 class="tareaTitulo" id="idTareaNombre" >Título de la tarea</h3>
+                    <div class="tareaDetalle">
+                        <p id="idtareaDescripcion">Descripción de la tarea</p>
+                        <h3 id="idFecha">Vence el: 22/10/2024</h3>
+                        <h3>Usuario</h3>
+                        <h3 id="idEstado">Estado</h3>
+                        <span id="idTareaCategoria">Categoría</span>
+                        <button class="btnComplet">Completado</button>
+                        <button class="btnEdit">Editar</button>
+                        <button class="btnDelete">Eliminar</button>
+                    </div>
+                </div>
+        </section>
+      
+    </main>
+    
+
+    <script  type="module" src="./js/controladorTareas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+</body>
+</html>

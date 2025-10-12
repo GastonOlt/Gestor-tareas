@@ -1,0 +1,351 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Cambiado: Se agregó para evitar el deslizamiento horizontal */
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #f39c12;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+}
+
+.task-form {
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Cambiado: Se ajustó para que ocupe el 100% del contenedor */
+    max-width: 400px; /* Cambiado: Se añadió un ancho máximo para evitar que crezca demasiado */
+    box-sizing: border-box; /* Cambiado: Asegura que el padding se incluya en el ancho total */
+}
+
+.task-form h2 {
+    margin-bottom: 15px;
+}
+
+.task-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.task-form input,
+.task-form select {
+    width: 100%; /* Cambiado: Se asegura que los inputs y select se ajusten al contenedor */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    box-sizing: border-box; /* Cambiado: Asegura que el padding se incluya en el ancho total */
+}
+
+.task-form input:focus,
+.task-form select:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.task-form button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+.task-form button:hover {
+    background-color: #e67e22;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para el modal (pop-up) */
+.modal {
+    display: none; /* Ocultado por defecto */
+    position: fixed;
+    z-index: 1; /* Asegúrate de que esté en la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    background-color: #3c3c3c;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ancho del contenido */
+    max-width: 500px; /* Ancho máximo */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f39c12;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el modal (pop-up) */
+.modal {
+    display: none; /* Ocultado por defecto */
+    position: fixed;
+    z-index: 1; /* Asegúrate de que esté en la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    background-color: #3c3c3c;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border-radius: 8px; /* Cambiado: Agregado para redondear los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Cambiado: Agregado para sombra */
+    width: 90%; /* Ancho del contenido */
+    max-width: 500px; /* Ancho máximo */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f39c12;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mejorar los estilos del formulario dentro del modal */
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%; /* Asegúrate que los inputs y select se ajusten al contenedor */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.modal-content button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+.modal-content button:hover {
+    background-color: #e67e22;
+}
+
+#open-modal{
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: left; /* Cambiado: alineación del texto a la izquierda */
+}
+
+/* header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+ */
+/* Mantener el botón en su propio estilo */
+#open-modal {
+    margin: 0; /* Cambiado: eliminando margen superior para evitar espacio adicional */
+    position: relative; /* Cambiado: asegurando que se mantenga en su lugar */
+}
+
+
+/*Mostrar la Tarea*/
+.accordion {
+    width: auto; /* Elimina el ancho fijo */
+min-width: 300px; /* Ancho mínimo para que no se haga muy pequeño */
+max-width: 80%; /* Que no supere el 100% del contenedor principal */
+/* margin: 10px auto; */
+margin-top: 20px;  /* Mueve el div hacia abajo */
+margin-bottom: 50%;  /* Mueve el div hacia arriba */
+margin-left: 20px;  /* Mueve el div hacia la izquierda */
+margin-right: 20px;  /* Mueve el div hacia la derecha */
+border: 1px solid #ccc;
+border-radius: 5px;
+overflow: hidden;
+border: #000 solid 3px;
+border-radius: 29px;
+padding: 10px; /* Añade un poco de padding para darle espacio al contenido */
+box-sizing: border-box; /* Para que padding y borde no afecten el tamaño total */ 
+text-align: center;
+}
+
+
+
+.task {
+border-bottom: 1px solid #ccc;
+padding: 10px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.task:last-child {
+border-bottom: none;
+}
+
+.task-title {
+font-size: 1.2em;
+margin: 0;
+padding: 0;
+}
+
+.task-details {
+display: none; /* Ocultamos los detalles por defecto */
+margin-top: 10px;
+}
+
+.task:hover {
+background-color: #383333; /* Cambiamos el fondo al pasar el mouse */
+}
+
+.task:hover .task-details {
+display: block; /* Mostramos los detalles al pasar el mouse */
+transition: opacity 0.3s ease;
+opacity: 1;
+}
+
+.task .task-details p, 
+.task .task-details span {
+margin: 5px 0;
+}
+
+span {
+background-color: #304255;
+color: white;
+padding: 3px 7px;
+border-radius: 3px;
+font-size: 0.9em;
+}
+.edit-btn {
+background-color: #28a745;
+margin: 5px;
+display: block;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.9em;
+transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+background-color: #218838;
+}
+
+.delet-btn {
+background-color: #f71d1d;
+margin: 5px;
+display: block;
+color: rgb(218, 218, 218);
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.9em;
+transition: background-color 0.3s ease;
+}
+
+.delet-btn:hover {
+background-color: #460909;
+}
+.btnComplet{
+    background-color: #559442;;
+margin: 5px;
+display: block;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 0.9em;
+transition: background-color 0.3s ease;
+}
+.btnComplet:hover{
+    background-color: #218838;
+}

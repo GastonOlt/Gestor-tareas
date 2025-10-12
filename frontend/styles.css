@@ -1,0 +1,346 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+  
+    color: #f39c12;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  
+    border-radius: 3px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.tareaCont {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* Alinea verticalmente las tareas */
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 20px; /* Añade un padding para que no esté tan pegado al borde */
+}
+
+.accordion {
+    width: 100%; /* Ocupa el 100% del contenedor */
+    max-width: 800px; /* Ancho máximo para evitar que se haga muy grande */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+.tarea {
+    background-color: #3c3c3c; /* Fondo de cada tarea */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin: 10px 0; /* Espaciado entre tareas */
+    padding: 15px; /* Espaciado interno */
+    transition: background-color 0.3s ease;
+}
+
+.tareaTitulo {
+    font-size: 1.5em; /* Título más grande */
+    margin: 0 0 10px; /* Margen inferior */
+}
+
+.tareaDetalle {
+    display: none; /* Ocultamos los detalles por defecto */
+}
+
+.tarea:hover {
+    background-color: #383333; /* Fondo al pasar el mouse */
+}
+
+.tarea:hover .tareaDetalle {
+    display: block; /* Mostramos los detalles al pasar el mouse */
+}
+
+.tarea .tareaDetalle p, 
+.tarea .tareaDetalle span {
+    margin: 5px 0; /* Espaciado entre detalles */
+}
+
+
+.btnEdit {
+    background-color: #13527c;
+    margin: 5px;
+    display: block;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    }
+    
+    .btnEdit:hover {
+    background-color: #072931;
+    }
+    
+    .btnDelete {
+    background-color: #f71d1d;
+    margin: 5px;
+    display: block;
+    color: rgb(218, 218, 218);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    }
+    
+    .btnDelete:hover {
+    background-color: #460909;
+    }
+
+    .btnComplet {
+        background-color: #559442;
+        margin: 5px;
+        display: block;
+        color: rgb(218, 218, 218);
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background-color 0.3s ease;
+        }
+        
+        .btnComplet:hover {
+        background-color: #0c3f14;
+        }
+    
+.tarea-form {
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Cambiado: Se ajustó para que ocupe el 100% del contenedor */
+    max-width: 400px; /* Cambiado: Se añadió un ancho máximo para evitar que crezca demasiado */
+    box-sizing: border-box; /* Cambiado: Asegura que el padding se incluya en el ancho total */
+}
+
+.tarea-form h2 {
+    margin-bottom: 15px;
+}
+
+.tarea-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.tarea-form input,
+.tarea-form select {
+    width: 100%; /* Cambiado: Se asegura que los inputs y select se ajusten al contenedor */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    box-sizing: border-box; /* Cambiado: Asegura que el padding se incluya en el ancho total */
+}
+
+.tarea-form input:focus,
+.tarea-form select:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.tarea-form button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+.tarea-form button:hover {
+    background-color: #e67e22;
+}
+
+/* footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+} */
+
+/* Estilos para el modal (pop-up) */
+.modal {
+    display: none; /* Ocultado por defecto */
+    position: fixed;
+    z-index: 1; /* Asegúrate de que esté en la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    background-color: #3c3c3c;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ancho del contenido */
+    max-width: 500px; /* Ancho máximo */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f39c12;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el modal (pop-up) */
+.modal {
+    display: none; /* Ocultado por defecto */
+    position: fixed;
+    z-index: 1; /* Asegúrate de que esté en la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    background-color: #3c3c3c;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    border-radius: 8px; /* Cambiado: Agregado para redondear los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Cambiado: Agregado para sombra */
+    width: 90%; /* Ancho del contenido */
+    max-width: 500px; /* Ancho máximo */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f39c12;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mejorar los estilos del formulario dentro del modal */
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%; /* Asegúrate que los inputs y select se ajusten al contenedor */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+.modal-content button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+.modal-content button:hover {
+    background-color: #e67e22;
+}
+
+#open-modal:hover{
+    background-color:  #49320e;
+}
+#open-modal{
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: left; /* Cambiado: alineación del texto a la izquierda */
+}
+
+/* header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+ */
+/* Mantener el botón en su propio estilo */
+#open-modal {
+    margin: 0; /* Cambiado: eliminando margen superior para evitar espacio adicional */
+    position: relative; /* Cambiado: asegurando que se mantenga en su lugar */
+}
+.btn-buscar {
+    margin: 10px;
+    background-color: #f39c12;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btnBuscarPorTitulo:hover {
+    background-color:  #64420a;; /* Cambia el color al pasar el mouse */
+}
